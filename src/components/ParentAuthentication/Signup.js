@@ -19,12 +19,9 @@ const Signup = () => {
   const history = useHistory();
   const Name = useRef();
   const Email = useRef();
-  const ParentEmail = useRef();
   const Password = useRef();
-  const Gender = useRef();
-  const DOB = useRef();
-
   const confirmpassword = useRef();
+
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -36,10 +33,7 @@ const Signup = () => {
       !Name.current.value ||
       !Email.current.value ||
       !Password.current.value ||
-      !confirmpassword.current.value ||
-      !ParentEmail.current.value ||
-      !Gender.current.value ||
-      !DOB.current.value
+      !confirmpassword.current.value
     ) {
       toast({
         title: "Please Fill all the Fields",
@@ -66,10 +60,7 @@ const Signup = () => {
     try {
       const name = Name.current.value;
       const email = Email.current.value;
-      const gender = Gender.current.value;
-      const dob = DOB.current.value;
       const password = Password.current.value;
-      const parentEmail = ParentEmail.current.value;
 
       const config = {
         headers: {
@@ -78,8 +69,8 @@ const Signup = () => {
       };
 
       const { data } = await axios.post(
-        "/api/auth",
-        { name, email, gender, dob, password, parentEmail },
+        "/api/auth/parentSignup",
+        { name, email, password },
         config
       );
       toast({
@@ -92,7 +83,7 @@ const Signup = () => {
       localStorage.setItem("userInfo", JSON.stringify(data));
 
       setLoading(false);
-      history.push("/home");
+      history.push("/dashboard");
     } catch (error) {
       toast({
         title: "Error Occured!",
@@ -115,16 +106,6 @@ const Signup = () => {
       <FormControl id="email" isRequired>
         <FormLabel>Email</FormLabel>
         <Input placeholder="Enter your Email" ref={Email} />
-      </FormControl>
-
-      <FormControl id="gender" isRequired>
-        <FormLabel>Gender</FormLabel>
-        <Input placeholder="Enter M or F" ref={Gender} />
-      </FormControl>
-
-      <FormControl id="gender" isRequired>
-        <FormLabel>DOB</FormLabel>
-        <Input placeholder="DD-MM-YYYY" ref={DOB} />
       </FormControl>
 
       <FormControl id="password" isRequired>
@@ -157,10 +138,6 @@ const Signup = () => {
             </Button>
           </InputRightElement>
         </InputGroup>
-      </FormControl>
-      <FormControl id="parentemail" isRequired>
-        <FormLabel>Parent's Email</FormLabel>
-        <Input placeholder="Enter your Parent's Email" ref={ParentEmail} />
       </FormControl>
 
       <Button

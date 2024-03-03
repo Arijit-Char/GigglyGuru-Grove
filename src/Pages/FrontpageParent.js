@@ -9,10 +9,10 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
-import Login from "../components/Authentication/Login";
-import Signup from "../components/Authentication/Signup";
+import Login from "../components/ParentAuthentication/Login";
+import Signup from "../components/ParentAuthentication/Signup";
 
-export const Frontpage = () => {
+export const FrontpageParent = () => {
   // const history = useHistory();
 
   // useEffect(() => {
@@ -36,7 +36,7 @@ export const Frontpage = () => {
         borderWidth="1px"
       >
         <Text fontSize="4xl" fontFamily="Work Sans" color="black">
-          Student Login
+          Parent Login
         </Text>
       </Box>
       <Box
@@ -47,7 +47,7 @@ export const Frontpage = () => {
         color="black"
         borderWidth="1px"
       >
-        <Tabs variant="soft-rounded">
+        <Tabs outline="blue">
           <TabList mb="1em">
             <Tab width="50%">Login</Tab>
             <Tab width="50%">Sign Up</Tab>

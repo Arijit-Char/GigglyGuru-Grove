@@ -1,6 +1,5 @@
 import {
   Button,
-  Checkbox,
   FormControl,
   FormLabel,
   Input,
@@ -9,14 +8,15 @@ import {
   useToast,
   VStack,
 } from "@chakra-ui/react";
+import axios from "axios";
 import React, { useRef, useState } from "react";
 import { BiSolidHide } from "react-icons/bi";
 import { FaRegEye } from "react-icons/fa";
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const toast = useToast();
-  // const history = useHistory();
+  const history = useHistory();
   const Email = useRef();
   const Password = useRef();
   const [show, setShow] = useState(false);
@@ -41,42 +41,42 @@ const Login = () => {
       return;
     }
 
-    // try {
-    //   const email = Email.current.value;
-    //   const password = Password.current.value;
+    try {
+      const email = Email.current.value;
+      const password = Password.current.value;
 
-    //   const config = {
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //   };
-    //   const { data } = await axios.post(
-    //     "/api/auth/login",
-    //     { email, password },
-    //     config
-    //   );
-    //   toast({
-    //     title: "Login Successful.",
-    //     status: "success",
-    //     duration: 5000,
-    //     isClosable: true,
-    //     position: "bottom",
-    //   });
-    //   localStorage.setItem("userInfo", JSON.stringify(data));
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      const { data } = await axios.post(
+        "/api/auth/login",
+        { email, password },
+        config
+      );
+      toast({
+        title: "Login Successful.",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom",
+      });
+      localStorage.setItem("userInfo", JSON.stringify(data));
 
-    //   setLoading(false);
-    //   history.push("/chats");
-    // } catch (error) {
-    //   toast({
-    //     title: "Error Occured!",
-    //     description: error.response.data.message,
-    //     status: "error",
-    //     duration: 5000,
-    //     isClosable: true,
-    //     position: "bottom",
-    //   });
-    //   setLoading(false);
-    // }
+      setLoading(false);
+      history.push("/home");
+    } catch (error) {
+      toast({
+        title: "Error Occured!",
+        description: error.response.data.message,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom",
+      });
+      setLoading(false);
+    }
   };
 
   return (
@@ -102,10 +102,6 @@ const Login = () => {
           </InputRightElement>
         </InputGroup>
       </FormControl>
-      <FormControl id="email">
-        <FormLabel>Please select for parent login</FormLabel>
-        <Checkbox defaultChecked>Checkbox</Checkbox>
-      </FormControl>
 
       <Button
         colorScheme="blue"
@@ -126,6 +122,16 @@ const Login = () => {
         }}
       >
         Get Guest User Credentials
+      </Button>
+      <Button
+        colorScheme="blue"
+        width="100%"
+        style={{ marginTop: 15 }}
+        onClick={() => {
+          history.push("/parentlogin");
+        }}
+      >
+        Proceed for Parent login
       </Button>
     </VStack>
   );
