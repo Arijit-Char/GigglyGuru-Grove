@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# GigglyGuru Grove
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+GigglyGuru Grove is an Ed-tech children learning website designed to revolutionize remote education. The platform provides an interactive environment for students, enhancing their learning experience through various advanced features.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Interactive Whiteboard**: Allows students to actively participate in lessons, practice writing skills, and visualize concepts in real-time.
+- **Text-to-Speech Conversion**: Facilitates comprehension and accessibility, especially for students with diverse learning needs.
+- **Keyword Recognition & Speaking Feature**: Enhances interactive learning, allowing students to reinforce their understanding through verbal interaction.
+- **YouTube Integration**: Students can access a wide array of educational content, enriching their learning journey.
+- **Parent Dashboard**: Enables parents to monitor their children's progress effortlessly, providing transparency and convenience.
 
-### `npm start`
+## The Problem GigglyGuru Grove Solves
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The platform addresses the challenges of remote education by offering a more interactive, accessible, and engaging learning environment. It makes learning more effective by integrating tools that cater to various learning styles and needs, while also providing parents with the tools to track and support their children's educational progress.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Challenges We Ran Into
 
-### `npm test`
+During the development of GigglyGuru Grove, we encountered a cross-origin error in the backend server. This issue typically arises when one server requests resources from another server. We resolved this problem by incorporating `cors` as a middleware in our server, ensuring smooth communication between different parts of our application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
+- **Node.js**
+- **Express.js**
+- **MongoDB**
+- **React.js**
+- **Chakra UI**
+- **EmailJS**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Demo & Live Links
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Video Demo**: [Watch the Demo](https://youtu.be/bAgs24LDLx0)
+- **Live Site**: [Visit GigglyGuru Grove](https://gigglygurugrove.courses/)
+- **Backend Repo**: [Visit GigglyGuru Grove](https://github.com/Arijit-Char/gigglyGuru-Grove-Backend)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
 
-### `npm run eject`
+To run this project locally, follow these steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/gigglyguru-grove.git
+2. Navigate to the project directory:
+   ```bash
+     cd gigglyguru-grove
+3. Install dependencies:
+   ```bash
+      npm install
+4. Start the development server:
+   ```bash
+   npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributors
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Arijit Char (Frontend)
+Rivu Basu (Backend)
