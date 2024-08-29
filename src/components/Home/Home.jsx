@@ -57,7 +57,7 @@ function Home() {
             </Link>
           </div>
           <div className="card card2">
-            <a href="https://www.youtube.com/">
+            <a href="https://www.youtube.com/results?search_query=educational+videos+for+kids+below+10+years&sp=EgIQAQ%253D%253D">
               <div className="centerView">
                 <h2>Videos</h2>
                 <img src={youtube} alt="Logo" />
